@@ -2,6 +2,8 @@
 pragma solidity ^0.8.0;
 
 contract ERC721 {
+
+    event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
     /*
         BUILDING OUT THE MINTING FUNCTION :
         A. NFT TO POINT TO AN ADDRES
@@ -35,6 +37,6 @@ contract ERC721 {
          // keeping track of each address that is minting and adding one to the count
          _OwnedTokensCount[to] += 1;
 
-
+         emit Transfer(address(0), to, tokenId);
      }
 }
